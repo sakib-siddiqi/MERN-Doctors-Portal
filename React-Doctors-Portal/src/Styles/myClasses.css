@@ -1,0 +1,12 @@
+.my-t-dark {
+  color: var(--my-dark) !important;
+}
+.my-t-primary {
+  color: var(--my-primary) !important;
+}
+/* 
+Background
+*/
+.my-bg {
+  color: var(--gradient) !important;
+}
