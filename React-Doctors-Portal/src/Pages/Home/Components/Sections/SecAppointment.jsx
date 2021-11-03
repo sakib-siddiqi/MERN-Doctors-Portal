@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import Section from "../../../../Shared/Section";
 const SecAppointment = () => {
   return (
-    <Section id="appointment" className="pt-4">
+    <Section id="appointment" className="pt-4 ">
       <Container>
         <Row
           xs={1}
