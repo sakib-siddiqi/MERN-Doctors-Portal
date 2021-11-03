@@ -24,7 +24,7 @@
 Background
 */
 .my-bg {
-  color: var(--gradient) !important;
+  background: var(--gradient) !important;
 }
 .glass-bg {
   background: var(--glass) !important;
@@ -34,4 +34,55 @@ Background
 /* height */
 .vh-min-100 {
   min-height: 100vh;
+}
+/* aspect ratio */
+.a-r-1 {
+  aspect-ratio: 1 !important;
+}
+.a-r-16 {
+  aspect-ratio: 16/9 !important;
+}
+/* bg img " */
+.bg-quote-img {
+  position: relative;
+  z-index: 1;
+}
+.bg-quote-img::before {
+  position: absolute;
+  content: url("./Images/q-bg.png");
+  opacity: 0.15;
+  object-fit: cover;
+  top: 50%;
+  left: 60%;
+  transform: translateY(-50%) scale(1.6);
+  z-index: 0;
+}
+/* bg img " */
+.sec-bg-quote-img {
+  position: relative;
+  z-index: 1;
+}
+.sec-bg-quote-img::before {
+  position: absolute;
+  content: url("./Images/q-bg-primary.png");
+  opacity: 0.2;
+  object-fit: cover;
+  top: 10%;
+  left: 80%;
+  transform: translateY(-50%) scale(2.5);
+  z-index: 0;
+}
+/* hover primary */
+.hover-primary {
+  cursor: pointer;
+}
+.hover-primary:hover {
+  background: var(--gradient) !important;
+}
+.hover-primary:hover * {
+  color: white !important;
+}
+/* card  */
+.card-shadow {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 }

@@ -7,4 +7,6 @@
   background: #3a4256 url("./appointment-bg.png");
   background-blend-mode: multiply;
   background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
