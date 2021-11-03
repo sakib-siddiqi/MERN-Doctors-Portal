@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import MyNavbar from "../../../../Shared/Navbar/MyNavbar";
-
+import headerimg from "../../../../Images/chair.png";
 const Header = () => {
   return (
     <header id="Header">
@@ -25,7 +25,7 @@ const Header = () => {
             <button className="btn btn-primary btn-lg">Get appointment</button>
           </Col>
           <Col md={7} className="h-center justify-content-end">
-            <img src="./images/chair.png" alt="header-img" className="w-75" />
+            <img src={headerimg} alt="header-img" className="w-75" />
           </Col>
         </Row>
       </Container>

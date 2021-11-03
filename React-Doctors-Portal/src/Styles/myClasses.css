@@ -15,10 +15,10 @@
 }
 /* text */
 .my-t-dark {
-  color: var(--my-dark) !important;
+  color: var(--my-dark);
 }
 .my-t-primary {
-  color: var(--my-primary) !important;
+  color: var(--my-primary);
 }
 /* 
 Background

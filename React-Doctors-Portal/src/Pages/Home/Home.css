@@ -1,10 +1,17 @@
 #Header {
-  background: url("./bg.png") !important;
+  background: url("../../Images/bg.png") !important;
   background-size: contain;
   background-position: center center;
 }
 #appointment {
-  background: #3a4256 url("./appointment-bg.png");
+  background: #3a4256 url("../../Images/appointment-bg.png");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#ContactUs {
+  background: #3a4256 url("../../Images/chair.png");
   background-blend-mode: multiply;
   background-size: cover;
   background-position: center center;
