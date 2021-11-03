@@ -1,3 +1,19 @@
+@import url("./root.css");
+
+/* flex center */
+.v-center {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.h-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+/* text */
 .my-t-dark {
   color: var(--my-dark) !important;
 }
@@ -9,4 +25,8 @@ Background
 */
 .my-bg {
   color: var(--gradient) !important;
+}
+.glass-bg {
+  background: var(--glass) !important;
+  backdrop-filter: var(--glass-blur) !important;
 }

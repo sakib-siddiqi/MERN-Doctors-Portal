@@ -1,5 +1,7 @@
+@import url("./Styles/Fonts_Outer.css");
 @import url("./Styles/root.css");
 @import url("./Styles/myClasses.css");
+@import url("./Styles/BsOverLap.css");
 
 /* All */
 * {

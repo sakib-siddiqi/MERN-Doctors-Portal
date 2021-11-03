@@ -2,8 +2,8 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { BiMenuAltRight } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
-const Header = () => (
-  <Navbar bg="none" expand="lg">
+const MyNavbar = () => (
+  <Navbar expand="lg" className="fixed-top glass-bg">
     <Container>
       <Navbar.Brand href="#home">
         <img
@@ -42,4 +42,4 @@ const Header = () => (
   </Navbar>
 );
 
-export default Header;
+export default MyNavbar;

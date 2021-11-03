@@ -1,5 +1,7 @@
 :root {
   --my-primary: #1cc7c1;
   --my-dark: #3a4256;
-  --gradient: linear-gradient(#19d3ae, #0fcfec);
+  --gradient: linear-gradient(to right, #1982d3, #0fa3ec);
+  --glass: rgba(255, 255, 255, 0.5);
+  --glass-blur: blur(10px);
 }

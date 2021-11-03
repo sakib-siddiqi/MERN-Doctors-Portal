@@ -1,0 +1,6 @@
+.btn {
+  border: none;
+}
+.btn-primary {
+  background: var(--gradient) !important;
+}
