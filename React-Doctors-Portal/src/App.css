@@ -2,7 +2,7 @@
 @import url("./Styles/root.css");
 @import url("./Styles/myClasses.css");
 @import url("./Styles/BsOverLap.css");
-
+@import url("./Shared/Footer/footer.css");
 /* All */
 * {
   font-family: "Poppins", sans-serif !important;
