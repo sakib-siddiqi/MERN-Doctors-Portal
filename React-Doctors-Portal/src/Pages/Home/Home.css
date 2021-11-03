@@ -3,3 +3,8 @@
   background-size: contain;
   background-position: center center;
 }
+#appointment {
+  background: #3a4256 url("./appointment-bg.png");
+  background-blend-mode: multiply;
+  background-size: cover;
+}

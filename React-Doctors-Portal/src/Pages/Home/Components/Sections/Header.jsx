@@ -7,7 +7,7 @@ const Header = () => {
     <header id="Header">
       <MyNavbar />
       <Container>
-        <Row xs={1} className="vh-100">
+        <Row xs={1} className="vh-min-100">
           <Col
             md={5}
             className="v-center align-items-center align-items-md-start text-center text-md-start"
@@ -24,7 +24,7 @@ const Header = () => {
             </p>
             <button className="btn btn-primary btn-lg">Get appointment</button>
           </Col>
-          <Col md={7} className="h-center">
+          <Col md={7} className="h-center justify-content-end">
             <img src="./images/chair.png" alt="header-img" className="w-75" />
           </Col>
         </Row>

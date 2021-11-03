@@ -30,3 +30,8 @@ Background
   background: var(--glass) !important;
   backdrop-filter: var(--glass-blur) !important;
 }
+
+/* height */
+.vh-min-100 {
+  min-height: 100vh;
+}

@@ -22,10 +22,10 @@ const doctorsData = [
 ];
 const Doctors = () => {
   return (
-    <Section id="Doctors" className="p-3">
+    <Section id="Doctors">
       <Container className="mt-5">
         <HomeTitle className="text-center" subTitle="Our Doctors" />
-        <Row className="mt-4">
+        <Row className="mt-4 justify-content-evenly">
           {doctorsData.map((doctorData) => (
             <SDCard imgPercent={75} cardData={doctorData} />
           ))}

@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
-import Section from "../../../Shared/Section";
-import HomeTitle from "./Common/HomeTitle";
-import SDCard from "./Common/SDCard";
+import Section from "../../../../Shared/Section";
+import HomeTitle from "../Common/HomeTitle";
+import SDCard from "../Common/SDCard";
 
 const Services = () => {
   return (

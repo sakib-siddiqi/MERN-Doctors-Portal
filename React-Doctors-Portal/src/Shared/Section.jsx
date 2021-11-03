@@ -1,8 +1,13 @@
 import React from "react";
 
-const Section = ({ id, children, className }) => {
+const Section = ({ id, children, className, ...rest }) => {
   return (
-    <section id={id} className={`${className} mt-5 mb-3`}>
+    <section
+      {...rest}
+      id={id}
+      className={`${className}`}
+      style={{ marginTop: "5rem" }}
+    >
       {children}
     </section>
   );
