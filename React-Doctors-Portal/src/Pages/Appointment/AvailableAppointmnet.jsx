@@ -11,7 +11,7 @@ const AvailableAppointmnet = ({ appointmnetDate }) => {
           Available Appointments on{" "}
           <span className="my-t-dark">{appointmnetDate}</span>
         </h1>
-        <Booking />
+        <Booking appointmnetDate={appointmnetDate} />
       </Container>
     </Section>
   );

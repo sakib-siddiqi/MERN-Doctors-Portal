@@ -40,7 +40,7 @@ const bookings = [
   },
 ];
 
-const Booking = () => {
+const Booking = ({ appointmnetDate }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -66,22 +66,57 @@ const Booking = () => {
                     </button>
                   </Card.Body>
                 </Card>
+                {/* Modal============= */}
+                <Modal show={show} onHide={handleClose}>
+                  <Card.Body>
+                    <h6 className="text-center my-t-primary mb-5">
+                      {booking.name}
+                    </h6>
+                    <form>
+                      <input
+                        type="text"
+                        name="time"
+                        className="form-control mb-4"
+                        value={booking.time}
+                        disabled
+                      />
+                      <input
+                        type="Name"
+                        name="name"
+                        className="form-control mb-4"
+                        placeholder="Your Name"
+                      />
+                      <input
+                        type="tel"
+                        name="phone number"
+                        className="form-control mb-4"
+                        placeholder="Your Phone Number"
+                      />
+                      <input
+                        type="email"
+                        name="email"
+                        className="form-control mb-4"
+                        value="sakib@gmail.com"
+                        disabled
+                      />
+                      <input
+                        type="text"
+                        name="text"
+                        className="form-control mb-4"
+                        value={appointmnetDate}
+                        disabled
+                      />
+                    </form>
+                    <Button className="btn-primary" onClick={handleClose}>
+                      SEND
+                    </Button>
+                  </Card.Body>
+                </Modal>
               </Col>
             ))}
           </Row>
         </Container>
       </Section>
-
-      {/* Modal============= */}
-
-      <Modal show={show} onHide={handleClose}>
-        <Card.Body>
-          <form></form>
-          <Button className="btn-primary" onClick={handleClose}>
-            SEND
-          </Button>
-        </Card.Body>
-      </Modal>
     </>
   );
 };

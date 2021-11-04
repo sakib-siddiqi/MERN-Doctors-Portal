@@ -36,6 +36,13 @@ const MyNavbar = () => (
           <Nav.Link as={NavLink} to="/contact-us">
             Contact Us
           </Nav.Link>
+          <Nav.Link
+            as={NavLink}
+            to="/login"
+            className="btn btn-primary text-light px-3"
+          >
+            <small> Login</small>
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Container>

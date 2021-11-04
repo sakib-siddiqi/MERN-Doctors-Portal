@@ -4,6 +4,7 @@
 @import url("./Styles/BsOverLap.css");
 @import url("./Shared/Footer/footer.css");
 @import url("./Pages/Appointment/appointment.css");
+@import url("./Pages/Login/Login.css");
 /* All */
 * {
   font-family: "Poppins", sans-serif !important;
