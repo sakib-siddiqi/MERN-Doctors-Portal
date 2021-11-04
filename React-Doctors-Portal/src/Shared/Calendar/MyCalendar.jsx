@@ -15,14 +15,12 @@ const MyCalender = ({ dateHandler }) => {
   const displayDate = new Date(year, month, day).toDateString();
   dateHandler(displayDate);
   return (
-    <>
-      <h5 className="fw-md my-t-primary">{displayDate}</h5>
-      <Calendar
-        value={selectedDay}
-        onChange={setSelectedDay}
-        shouldHighlightWeekends
-      />
-    </>
+    <Calendar
+      calendarClassName="shadow-lg"
+      value={selectedDay}
+      onChange={setSelectedDay}
+      shouldHighlightWeekends
+    />
   );
 };
 

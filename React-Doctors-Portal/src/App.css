@@ -3,6 +3,7 @@
 @import url("./Styles/myClasses.css");
 @import url("./Styles/BsOverLap.css");
 @import url("./Shared/Footer/footer.css");
+@import url("./Pages/Appointment/appointment.css");
 /* All */
 * {
   font-family: "Poppins", sans-serif !important;

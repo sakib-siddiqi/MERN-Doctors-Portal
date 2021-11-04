@@ -5,12 +5,17 @@ import AvailableAppointmnet from "./AvailableAppointmnet";
 const Appointment = () => {
   // date
   const [appointmentDate, setAppointmentDate] = useState();
-  const handleAppointmentDate = (date) => setAppointmentDate(date);
+  const handleAppointmentDate = (date) => {
+    setAppointmentDate(date);
+  };
   return (
-    <div>
-      <AppointMentHeader dateHandler={handleAppointmentDate} />
+    <>
+      <AppointMentHeader
+        dateHandler={handleAppointmentDate}
+        appointmentDate={appointmentDate}
+      />
       <AvailableAppointmnet appointmnetDate={appointmentDate} />
-    </div>
+    </>
   );
 };
 
