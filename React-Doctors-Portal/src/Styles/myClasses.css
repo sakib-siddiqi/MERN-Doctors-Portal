@@ -69,7 +69,7 @@ Background
   object-fit: cover;
   top: 10%;
   left: 80%;
-  transform: translateY(-50%) scale(2.5);
+  transform: translateY(-50%) scale(1);
   z-index: 0;
 }
 /* hover primary */
