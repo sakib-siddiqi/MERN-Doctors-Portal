@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import AppointMentHeader from "./AppointMentHeader";
+import AvailableAppointmnet from "./AvailableAppointmnet";
 
 const Appointment = () => {
   // date
@@ -8,7 +9,7 @@ const Appointment = () => {
   return (
     <div>
       <AppointMentHeader dateHandler={handleAppointmentDate} />
-      <h1>{appointmentDate}</h1>
+      <AvailableAppointmnet appointmnetDate={appointmentDate} />
     </div>
   );
 };
