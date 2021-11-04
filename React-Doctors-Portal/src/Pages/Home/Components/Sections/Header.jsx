@@ -1,11 +1,10 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import MyNavbar from "../../../../Shared/Navbar/MyNavbar";
 import headerimg from "../../../../Images/chair.png";
+import { NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <header id="Header">
-      <MyNavbar />
       <Container>
         <Row xs={1} className="vh-min-100">
           <Col
@@ -22,7 +21,9 @@ const Header = () => {
               industry. Lorem Ipsum has been the industry’s standard dummy text
               ever since the
             </p>
-            <button className="btn btn-primary btn-lg">Get appointment</button>
+            <NavLink to="/appointment" className="btn btn-primary btn-lg">
+              Get appointment
+            </NavLink>
           </Col>
           <Col md={7} className="h-center justify-content-end">
             <img src={headerimg} alt="header-img" className="w-75" />
