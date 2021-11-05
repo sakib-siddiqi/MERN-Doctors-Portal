@@ -1,12 +1,13 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Page from "../../Shared/Page";
 import Section from "../../Shared/Section";
 
 const Login = () => {
   return (
     <Page>
-      <Section id="Login">
+      <Section id="Login-signup">
         <Container>
           <Row className="vh-min-100 v-center">
             <Col xs={12} md={4} className="text-center bg-white shadow p-4">
@@ -39,6 +40,12 @@ const Login = () => {
                 <button type="submit" className="btn btn-primary">
                   Login
                 </button>
+                <Link
+                  to="/signup"
+                  className="nav-link p-0 mb-2 mt-3 text-primary"
+                >
+                  Don't have an account?
+                </Link>
               </form>
             </Col>
           </Row>
