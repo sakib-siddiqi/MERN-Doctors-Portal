@@ -1,4 +1,5 @@
 import React from "react";
+import Page from "../../Shared/Page";
 import Doctors from "./Components/Doctors/Doctors";
 import Blogs from "./Components/Sections/Blogs";
 import ContactUs from "./Components/Sections/ContactUs";
@@ -10,7 +11,7 @@ import Testimonial from "./Components/Sections/Testimonial";
 import "./Home.css";
 const Home = () => {
   return (
-    <div id="Home">
+    <Page id="pageHome">
       <Header />
       <Services />
       <FeateredService />
@@ -19,7 +20,7 @@ const Home = () => {
       <Blogs />
       <Doctors />
       <ContactUs />
-    </div>
+    </Page>
   );
 };
 

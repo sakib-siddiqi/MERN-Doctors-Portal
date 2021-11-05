@@ -1,25 +1,20 @@
 import React from "react";
 import { Col, Container, Nav, Row } from "react-bootstrap";
 import { Switch, Route } from "react-router-dom";
-import Section from "../Shared/Section";
-import DashAppointment from "./Dash.Pages/DashAppointment";
-import DashBoard from "./Dash.Pages/DashBoard";
+import DashBoardMenu from "./DashBoardMenu";
+import DashBoard from "./Dash.Pages/Dashboard/DashBoard";
+import DashAppointment from "./Dash.Pages/DashAppointmnet/DashAppointment";
 import DashPatients from "./Dash.Pages/DashPatients";
 import DashPrescriptions from "./Dash.Pages/DashPrescriptions";
-import DashBoardMenu from "./DashBoardMenu";
 import { VscSignOut } from "react-icons/vsc";
 const MainDashBoard = () => {
   return (
-    <Section>
-      <Container fluid>
-        <Row className="vh-min-80">
+    <section>
+      <Container fluid style={{ background: "#f4fdfb" }}>
+        <Row className="min-vh-100">
           <Col
             xs={2}
             className="bg-primary text-white p-3 d-flex justify-content-between flex-column"
-            style={{
-              borderTopRightRadius: "10px",
-              borderBottomRightRadius: "10px",
-            }}
           >
             <div>
               <DashBoardMenu />
@@ -45,7 +40,7 @@ const MainDashBoard = () => {
           </Col>
         </Row>
       </Container>
-    </Section>
+    </section>
   );
 };
 

@@ -9,13 +9,13 @@ const Appointment = () => {
     setAppointmentDate(date);
   };
   return (
-    <>
+    <page id="pageAppointment">
       <AppointMentHeader
         dateHandler={handleAppointmentDate}
         appointmentDate={appointmentDate}
       />
       <AvailableAppointmnet appointmnetDate={appointmentDate} />
-    </>
+    </page>
   );
 };
 

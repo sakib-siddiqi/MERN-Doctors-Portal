@@ -1,6 +1,12 @@
 @import url("./root.css");
 
 /* flex center */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .v-center {
   display: flex;
   justify-content: center;
@@ -30,7 +36,18 @@ Background
   background: var(--glass) !important;
   backdrop-filter: var(--glass-blur) !important;
 }
-
+.bg-my-danger {
+  background: #f1536e;
+}
+.bg-my-success {
+  background: #00c689;
+}
+.bg-my-primary {
+  background: #3da5f4;
+}
+.bg-my-warning {
+  background: #fda006;
+}
 /* height */
 .vh-min-100 {
   min-height: 100vh;
@@ -94,3 +111,4 @@ Background
 .card-shadow {
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
+/* active */

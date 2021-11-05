@@ -9,8 +9,8 @@ const DashBoardMenuItem = ({ children, to, ...rest }) => {
         as={NavLink}
         {...rest}
         to={to}
-        className="rounded-3 mb-3 dashBoard-link shadow-sm text-center text-md-start"
-        activeClassName="dashBoard-link-active"
+        className="nav-link rounded-3 mb-3  shadow-sm text-center text-md-start dashBoard-link"
+        activeClassName=" dashBoard-link-active"
       >
         {children}
       </Nav.Link>
