@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import useFirebase from "../../Hooks/Firebase/useFirebase";
 import Page from "../../Shared/Page";
 import Section from "../../Shared/Section";
 
 const SignUp = () => {
+  const { handleSignUp } = useFirebase();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  console.log(formData);
+  function handleSubmit() {}
   return (
     <Page>
       <Section id="Login-signup">
@@ -19,7 +28,7 @@ const SignUp = () => {
                 <h4 className="my-t-primary fw-md">DOCTORS PORTAL</h4>
                 <h5 className="my-t-dark fw-md">Signup</h5>
               </div>
-              <form className=" text-start">
+              <form className=" text-start" onSubmit={handleSubmit}>
                 <label htmlFor="name" className="form-label w-100">
                   <p>Your Name</p>
                   <input
@@ -28,6 +37,9 @@ const SignUp = () => {
                     id="name"
                     placeholder="Name"
                     className="form-control mb-3"
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                   />
                 </label>
                 <label htmlFor="email" className="form-label w-100">
@@ -38,6 +50,9 @@ const SignUp = () => {
                     id="email"
                     placeholder="Email"
                     className="form-control mb-3"
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                   />
                 </label>
                 <label htmlFor="password" className="form-label w-100">
@@ -48,6 +63,9 @@ const SignUp = () => {
                     id="password"
                     placeholder="Password"
                     className="form-control mb-3"
+                    onChange={(e) =>
+                      setFormData({ ...formData, password: e.target.value })
+                    }
                   />
                 </label>
                 <button type="submit" className="btn btn-primary">

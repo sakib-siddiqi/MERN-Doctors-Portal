@@ -13,7 +13,6 @@ const MyCalender = ({ dateHandler }) => {
   const [selectedDay, setSelectedDay] = useState(defaultValue);
   const { year, month, day } = selectedDay;
   const displayDate = new Date(year, month, day).toDateString();
-  console.log(dateHandler);
   dateHandler && dateHandler(displayDate);
   return (
     <Calendar
