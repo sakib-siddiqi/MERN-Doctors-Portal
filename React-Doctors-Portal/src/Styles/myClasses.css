@@ -35,6 +35,9 @@ Background
 .vh-min-100 {
   min-height: 100vh;
 }
+.vh-min-80 {
+  min-height: 80vh;
+}
 /* aspect ratio */
 .a-r-1 {
   aspect-ratio: 1 !important;
@@ -71,6 +74,11 @@ Background
   left: 80%;
   transform: translateY(-50%) scale(1);
   z-index: 0;
+}
+@media (max-width: 800px) {
+  .sec-bg-quote-img::before {
+    display: none;
+  }
 }
 /* hover primary */
 .hover-primary {

@@ -5,6 +5,7 @@
 @import url("./Shared/Footer/footer.css");
 @import url("./Pages/Appointment/appointment.css");
 @import url("./Pages/Login/Login.css");
+@import url("./Dashboard//dashBoard.css");
 /* All */
 * {
   font-family: "Poppins", sans-serif !important;

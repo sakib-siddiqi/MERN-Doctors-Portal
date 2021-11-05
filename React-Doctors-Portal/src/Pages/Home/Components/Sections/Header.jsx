@@ -25,7 +25,10 @@ const Header = () => {
               Get appointment
             </NavLink>
           </Col>
-          <Col md={7} className="h-center justify-content-end">
+          <Col
+            md={7}
+            className="h-center justify-content-center justify-content-md-end"
+          >
             <img src={headerimg} alt="header-img" className="w-75" />
           </Col>
         </Row>
