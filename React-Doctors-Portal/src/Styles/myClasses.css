@@ -36,6 +36,9 @@ Background
   background: var(--glass) !important;
   backdrop-filter: var(--glass-blur) !important;
 }
+.btn-danger {
+  background: #fc2553 !important;
+}
 .bg-my-danger {
   background: #f1536e;
 }

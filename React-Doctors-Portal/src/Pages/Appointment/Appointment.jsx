@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Page from "../../Shared/Page";
 import AppointMentHeader from "./AppointMentHeader";
 import AvailableAppointmnet from "./AvailableAppointmnet";
 
@@ -9,13 +10,13 @@ const Appointment = () => {
     setAppointmentDate(date);
   };
   return (
-    <page id="pageAppointment">
+    <Page id="pageAppointment">
       <AppointMentHeader
         dateHandler={handleAppointmentDate}
         appointmentDate={appointmentDate}
       />
       <AvailableAppointmnet appointmnetDate={appointmentDate} />
-    </page>
+    </Page>
   );
 };
 

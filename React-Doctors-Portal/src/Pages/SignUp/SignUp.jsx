@@ -6,14 +6,28 @@ import Page from "../../Shared/Page";
 import Section from "../../Shared/Section";
 
 const SignUp = () => {
-  const { handleSignUp } = useFirebase();
+  const { firebase, handleSignUp } = useFirebase();
+  const [formError, setFormError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
   });
-  console.log(formData);
-  function handleSubmit() {}
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (formData.name && formData.email && formData.password) {
+      handleSignUp(formData);
+      setFormError("");
+      setFormData({
+        name: "",
+        email: "",
+        password: "",
+      });
+      setFormError("");
+    } else {
+      setFormError("Can't Submit. Check All Fuilds.");
+    }
+  }
   return (
     <Page>
       <Section id="Login-signup">
@@ -28,7 +42,7 @@ const SignUp = () => {
                 <h4 className="my-t-primary fw-md">DOCTORS PORTAL</h4>
                 <h5 className="my-t-dark fw-md">Signup</h5>
               </div>
-              <form className=" text-start" onSubmit={handleSubmit}>
+              <form className=" text-start" onSubmit={(e) => handleSubmit(e)}>
                 <label htmlFor="name" className="form-label w-100">
                   <p>Your Name</p>
                   <input
@@ -37,6 +51,7 @@ const SignUp = () => {
                     id="name"
                     placeholder="Name"
                     className="form-control mb-3"
+                    value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
@@ -48,6 +63,7 @@ const SignUp = () => {
                     type="email"
                     name="emial"
                     id="email"
+                    value={formData.email}
                     placeholder="Email"
                     className="form-control mb-3"
                     onChange={(e) =>
@@ -61,13 +77,19 @@ const SignUp = () => {
                     type="password"
                     name="password"
                     id="password"
+                    minLength="8"
                     placeholder="Password"
                     className="form-control mb-3"
+                    value={formData.password}
                     onChange={(e) =>
                       setFormData({ ...formData, password: e.target.value })
                     }
                   />
                 </label>
+                {formError && <p className="text-danger mb-3">* {formError}</p>}
+                {firebase.error && (
+                  <p className="text-danger mb-3">* {firebase.error}</p>
+                )}
                 <button type="submit" className="btn btn-primary">
                   Signup
                 </button>
