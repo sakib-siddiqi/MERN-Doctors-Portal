@@ -12,3 +12,9 @@
   font-weight: 500;
   letter-spacing: 1px;
 }
+.dashBoard-link-active.dashBoard-link:hover {
+  background: #ffffff;
+  color: #0d6efd;
+  font-weight: 500;
+  letter-spacing: 1px;
+}

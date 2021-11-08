@@ -11,7 +11,7 @@ const MainDashBoard = () => {
   return (
     <section>
       <Container fluid style={{ background: "#f4fdfb" }}>
-        <Row className="min-vh-100">
+        <Row className="vh-100">
           <Col
             xs={2}
             className="bg-primary text-white p-3 d-flex justify-content-between flex-column"
@@ -20,7 +20,7 @@ const MainDashBoard = () => {
               <DashBoardMenu />
             </div>
             <Nav.Item className="shadow-sm p-2 rounded-3 text-center bg-danger">
-              <span className="d-none d-md-inline-block">Logout</span>{" "}
+              <span className="d-none d-md-inline-block">Logout</span>
               <VscSignOut className="ms-0 ms-md-2" />
             </Nav.Item>
           </Col>

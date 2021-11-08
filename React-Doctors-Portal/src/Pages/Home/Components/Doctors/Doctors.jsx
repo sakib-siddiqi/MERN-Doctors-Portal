@@ -26,8 +26,8 @@ const Doctors = () => {
       <Container className="mt-5">
         <HomeTitle className="text-center" subTitle="Our Doctors" />
         <Row className="mt-4 justify-content-evenly">
-          {doctorsData.map((doctorData) => (
-            <SDCard imgPercent={75} cardData={doctorData} />
+          {doctorsData.map((doctorData, key) => (
+            <SDCard imgPercent={75} cardData={doctorData} key={key} />
           ))}
         </Row>
       </Container>

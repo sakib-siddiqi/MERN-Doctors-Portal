@@ -78,10 +78,15 @@ const MyNavbar = () => {
               Contact Us
             </Nav.Link>
             {firebase.user.uid ? (
-              <LogOutBtn
-                userName={firebase.user?.displayName}
-                onClick={handleSignOut}
-              />
+              <>
+                <Nav.Link as={NavLink} to="/dashboard">
+                  Dashboard
+                </Nav.Link>
+                <LogOutBtn
+                  userName={firebase.user?.displayName}
+                  onClick={handleSignOut}
+                />
+              </>
             ) : (
               <LoginBtn />
             )}

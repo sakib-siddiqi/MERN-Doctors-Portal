@@ -54,9 +54,10 @@ function useFirebase() {
     function handleSignIn({ email, password }, redirectHistory) {
         setLoading(true);
         signInWithEmailAndPassword(auth, email, password)
-            .then((res) => { setUser(res.user); setError('') })
+            .then((res) => { setUser(res.user); setError(''); redirectHistory(); })
             .catch((err) => setError(err.code))
             .finally(() => setLoading(false));
+        console.log(redirectHistory);
     }
     /**
      * Sign out
