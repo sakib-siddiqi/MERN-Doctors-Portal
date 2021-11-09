@@ -53,7 +53,7 @@ const DashAppointment = () => {
         </Col>
         <Col md={8}>
           <Card.Body className="p-3 card-shadow bg-white rounded-3">
-            <h5 className="text-primary">{date.toDateString()}</h5>
+            <h5 className="text-primary">{date.toDateString()} </h5>
             {dataLoading ? (
               <div className="v-center h-center">
                 <Loading />
