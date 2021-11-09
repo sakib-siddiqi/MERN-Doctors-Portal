@@ -9,6 +9,7 @@ const Appointment = () => {
   const handleAppointmentDate = (date) => {
     setAppointmentDate(date);
   };
+  console.log(appointmentDate);
   return (
     <Page id="pageAppointment">
       <AppointMentHeader
