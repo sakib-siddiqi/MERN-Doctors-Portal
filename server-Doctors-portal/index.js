@@ -22,7 +22,29 @@ const client = new MongoClient(uri);
      * db and collection
      */
     const DB_doctors_portal = client.db("Doctors-Portal");
+    const appointmentsCollection = DB_doctors_portal.collection("appointments");
+
+    /**
+     * get appointment
+     */
+    app.get('/appointments', async (req, res) => {
+        const email = req.query.email;
+        const appointmnetDate = req.query.appointmnetDate;
+        const query = { email, appointmnetDate };
+        const cursore = appointmentsCollection.find(query);
+        const result = await cursore.toArray();
+        res.json(result);
+    });
+    /**
+     * post appointment
+     */
+    app.post('/appointments', async (req, res) => {
+        const appointmentData = req.body;
+        const result = await appointmentsCollection.insertOne(appointmentData);
+        res.send(result);
+    });
+
 })();
 
-app.get("/", (req, res) => res.send("server live"));
+app.get("/", (req, res) => res.send("Doctors portal"));
 app.listen(port, () => console.log("running"));
