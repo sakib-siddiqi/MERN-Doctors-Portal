@@ -7,11 +7,12 @@ import DashAppointment from "./Dash.Pages/DashAppointmnet/DashAppointment";
 import DashPatients from "./Dash.Pages/DashPatients";
 import DashPrescriptions from "./Dash.Pages/DashPrescriptions";
 import { VscSignOut } from "react-icons/vsc";
+
 const MainDashBoard = () => {
   return (
     <section>
       <Container fluid style={{ background: "#f4fdfb" }}>
-        <Row className="vh-100">
+        <Row className="vh-100 ">
           <Col
             xs={2}
             className="bg-primary text-white p-3 d-flex justify-content-between flex-column"

@@ -2,6 +2,8 @@ import React from "react";
 import { Container, Row } from "react-bootstrap";
 import Section from "../../Shared/Section";
 import SingleBooking from "./SingleBooking";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const bookings = [
   {
     id: 1,
@@ -42,6 +44,9 @@ const bookings = [
 ];
 
 const Booking = ({ appointmnetDate }) => {
+  function handleToastPromise(promise, resultObj) {
+    toast.promise(promise, resultObj);
+  }
   return (
     <>
       <Section>
@@ -52,11 +57,23 @@ const Booking = ({ appointmnetDate }) => {
                 booking={booking}
                 key={booking.id}
                 appointmnetDate={appointmnetDate}
+                handleToastPromise={handleToastPromise}
               />
             ))}
           </Row>
         </Container>
       </Section>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 };

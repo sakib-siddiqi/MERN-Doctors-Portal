@@ -4,7 +4,6 @@ import useAuth from "../../Hooks/useAuth";
 
 const PrivateRoute = ({ children, ...rest }) => {
   const { firebase } = useAuth();
-  console.log(firebase);
   return (
     <Route
       {...rest}

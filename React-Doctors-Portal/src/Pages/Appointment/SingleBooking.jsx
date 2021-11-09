@@ -1,8 +1,16 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Col, Button, Card, Modal } from "react-bootstrap";
 import useAuth from "../../Hooks/useAuth";
-const SingleBooking = ({ booking, appointmnetDate }) => {
-  const [bookingData, setBookingData] = useState({});
+
+const SingleBooking = ({ booking, appointmnetDate, handleToastPromise }) => {
+  const { firebase } = useAuth();
+  const DefaultData = {
+    appointmnetName: booking.name,
+    appointmnetDate,
+    email: firebase.user.email,
+    schedule: booking.time,
+  };
   /**
    * Modal Functions
    */
@@ -12,24 +20,34 @@ const SingleBooking = ({ booking, appointmnetDate }) => {
   /**
    * Function
    */
-  const { firebase } = useAuth();
-  const DefaultData = {
-    appointmnetDate,
-    email: firebase.user.email,
+
+  const [bookingInfo, setBookingInfo] = useState({
     patientName: firebase.user.displayName,
-  };
+    phoneNumber: "",
+  });
+
   function takeData(e) {
     const fuild = e.target.name;
     const value = e.target.value;
-    const newInfo = { ...DefaultData };
+    const newInfo = { ...bookingInfo };
     newInfo[fuild] = value;
-    setBookingData(newInfo);
+    setBookingInfo(newInfo);
   }
+
   function handleSubmit(e) {
     e.preventDefault();
     handleClose();
-    console.log(bookingData);
+    const bookingData = { ...DefaultData, ...bookingInfo };
+    handleToastPromise(
+      axios.post("http://localhost:5000/appointments", { ...bookingData }),
+      {
+        pending: "Loading...",
+        success: "Booked 👍",
+        error: "failed. Try again 🚫",
+      }
+    );
   }
+
   return (
     <Col key={booking.id}>
       <Card className="border-0 card-shadow">
@@ -60,23 +78,24 @@ const SingleBooking = ({ booking, appointmnetDate }) => {
               type="Name"
               name="patientName"
               className="form-control mb-4"
-              placeholder="Your Name"
-              value={firebase.user.displayName}
-              disabled
+              placeholder="Patient Name"
+              defaultValue={firebase.user.displayName}
+              onBlur={(e) => takeData(e)}
+              required
             />
             <input
               type="tel"
-              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
               name="phoneNumber"
               className="form-control mb-4"
               placeholder="Your Phone Number"
               onBlur={(e) => takeData(e)}
+              required
             />
             <input
               type="email"
               name="email"
               className="form-control mb-4"
-              value="sakib@gmail.com"
+              value={firebase.user.email}
               disabled
             />
             <input
