@@ -9,9 +9,9 @@ const AvailableAppointmnet = ({ appointmnetDate }) => {
       <Container>
         <h1 className="my-t-primary text-center fw-md">
           Available Appointments on{" "}
-          <span className="my-t-dark">{appointmnetDate}</span>
+          <span className="my-t-dark">{appointmnetDate?.toDateString()}</span>
         </h1>
-        <Booking appointmnetDate={appointmnetDate} />
+        <Booking appointmnetDate={appointmnetDate?.toLocaleDateString()} />
       </Container>
     </Section>
   );

@@ -2,21 +2,27 @@ import React, { useState } from "react";
 import Page from "../../Shared/Page";
 import AppointMentHeader from "./AppointMentHeader";
 import AvailableAppointmnet from "./AvailableAppointmnet";
-
+// date
+const date = new Date();
+const defaultValue = {
+  year: date.getFullYear(),
+  month: date.getMonth(),
+  day: date.getDate(),
+};
 const Appointment = () => {
-  // date
-  const [appointmentDate, setAppointmentDate] = useState();
-  const handleAppointmentDate = (date) => {
-    setAppointmentDate(date);
-  };
-  console.log(appointmentDate);
+  const [selectedDay, setSelectedDay] = useState(defaultValue);
+  // dateHandler
+  const handleAppointmentDate = () => setSelectedDay;
+  console.log(selectedDay);
+  const date = new Date(selectedDay.year, selectedDay.month, selectedDay.day);
   return (
     <Page id="pageAppointment">
       <AppointMentHeader
+        selectedDay={selectedDay}
         dateHandler={handleAppointmentDate}
-        appointmentDate={appointmentDate}
+        appointmentDate={date}
       />
-      <AvailableAppointmnet appointmnetDate={appointmentDate} />
+      <AvailableAppointmnet appointmnetDate={date} />
     </Page>
   );
 };

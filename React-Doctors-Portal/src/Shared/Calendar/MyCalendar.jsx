@@ -1,24 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import { Calendar } from "react-modern-calendar-datepicker";
 
-// date
-const date = new Date();
-const defaultValue = {
-  year: date.getFullYear(),
-  month: date.getMonth(),
-  day: date.getDate(),
-};
-const MyCalender = ({ dateHandler }) => {
-  const [selectedDay, setSelectedDay] = useState(defaultValue);
-  const { year, month, day } = selectedDay;
-  const displayDate = new Date(year, month, day).toLocaleDateString();
-  dateHandler && dateHandler(displayDate);
+const MyCalender = ({ dateHandler, selectedDay }) => {
   return (
     <Calendar
       calendarClassName="shadow-lg"
       value={selectedDay}
-      onChange={setSelectedDay}
+      onChange={dateHandler()}
       shouldHighlightWeekends
     />
   );

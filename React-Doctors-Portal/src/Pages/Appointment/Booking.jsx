@@ -50,7 +50,7 @@ const Booking = ({ appointmnetDate }) => {
         <Container>
           <Row xs={1} md={2} lg={3} className="g-4">
             {bookings.map((booking) => (
-              <Col key={bookings.id}>
+              <Col key={booking.id}>
                 <Card className="border-0 card-shadow">
                   <Card.Body className="text-center">
                     <h5 className="my-t-primary fw-md">{booking.name}</h5>
