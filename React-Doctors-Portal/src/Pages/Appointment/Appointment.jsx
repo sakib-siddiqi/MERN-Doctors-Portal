@@ -13,7 +13,6 @@ const Appointment = () => {
   const [selectedDay, setSelectedDay] = useState(defaultValue);
   // dateHandler
   const handleAppointmentDate = () => setSelectedDay;
-  console.log(selectedDay);
   const date = new Date(selectedDay.year, selectedDay.month, selectedDay.day);
   return (
     <Page id="pageAppointment">

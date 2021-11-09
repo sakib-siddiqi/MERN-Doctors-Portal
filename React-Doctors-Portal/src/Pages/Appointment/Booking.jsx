@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { Card, Col, Container, Modal, Row, Button } from "react-bootstrap";
+import React from "react";
+import { Container, Row } from "react-bootstrap";
 import Section from "../../Shared/Section";
+import SingleBooking from "./SingleBooking";
 const bookings = [
   {
     id: 1,
@@ -41,78 +42,17 @@ const bookings = [
 ];
 
 const Booking = ({ appointmnetDate }) => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   return (
     <>
       <Section>
         <Container>
           <Row xs={1} md={2} lg={3} className="g-4">
             {bookings.map((booking) => (
-              <Col key={booking.id}>
-                <Card className="border-0 card-shadow">
-                  <Card.Body className="text-center">
-                    <h5 className="my-t-primary fw-md">{booking.name}</h5>
-                    <h6 className="my-t-dark fw-md">{booking.time}</h6>
-                    <small className=" text-muted d-block mb-3">
-                      {booking.space} space available
-                    </small>
-                    <button
-                      className="btn btn-primary rounded-0"
-                      onClick={handleShow}
-                    >
-                      Book appointment
-                    </button>
-                  </Card.Body>
-                </Card>
-                {/* Modal============= */}
-                <Modal show={show} onHide={handleClose}>
-                  <Card.Body>
-                    <h6 className="text-center my-t-primary mb-5">
-                      {booking.name}
-                    </h6>
-                    <form>
-                      <input
-                        type="text"
-                        name="time"
-                        className="form-control mb-4"
-                        value={booking.time}
-                        disabled
-                      />
-                      <input
-                        type="Name"
-                        name="name"
-                        className="form-control mb-4"
-                        placeholder="Your Name"
-                      />
-                      <input
-                        type="tel"
-                        name="phone number"
-                        className="form-control mb-4"
-                        placeholder="Your Phone Number"
-                      />
-                      <input
-                        type="email"
-                        name="email"
-                        className="form-control mb-4"
-                        value="sakib@gmail.com"
-                        disabled
-                      />
-                      <input
-                        type="text"
-                        name="text"
-                        className="form-control mb-4"
-                        value={appointmnetDate}
-                        disabled
-                      />
-                    </form>
-                    <Button className="btn-primary" onClick={handleClose}>
-                      SEND
-                    </Button>
-                  </Card.Body>
-                </Modal>
-              </Col>
+              <SingleBooking
+                booking={booking}
+                key={booking.id}
+                appointmnetDate={appointmnetDate}
+              />
             ))}
           </Row>
         </Container>

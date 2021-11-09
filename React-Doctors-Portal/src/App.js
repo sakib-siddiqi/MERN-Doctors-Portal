@@ -22,7 +22,9 @@ function App() {
             <BrowserRouter>
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/appointment" component={Appointment} />
+                <PrivateRoute path="/appointment" >
+                  <Appointment />
+                </PrivateRoute>
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={SignUp} />
                 <PrivateRoute path="/dashboard">
